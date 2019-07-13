@@ -1,1 +1,1 @@
-# django-docker-practice
+# Django Docker - practice
