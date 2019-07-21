@@ -4,7 +4,6 @@ services:
   db:
     image: postgres
   web:
-    image: misaelriot/django_project:part1
     build:
       context: .
     ports:

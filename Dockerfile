@@ -1,5 +1,4 @@
-# Image running on alpine linux to avoid unnecessary files
-FROM python:3.7.4-alpine3.10
+FROM python:3.7.4
 
 LABEL maintainer="Misael Mondragon Lenis"
 
@@ -9,7 +8,7 @@ ENV PYTHONUNBUFFERED 1
 
 #Dependencies
 COPY ./requirements.txt /requirements.txt
-RUN pip install -r /requirements.txt
+RUN pip3 install -r /requirements.txt
 
 # Create app folder in the docker image?
 RUN mkdir /app
@@ -18,6 +17,3 @@ WORKDIR /app
 #copies the contents of the app folder where we created the project
 # to the app folder where we created our image
 COPY ./app /app
-
-RUN adduser -D misael
-USER misael
